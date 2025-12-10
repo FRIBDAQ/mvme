@@ -1,6 +1,6 @@
 [submodule "external/mesytec-mvlc"]
 	path = external/mesytec-mvlc
-	url = ../mesytec-mvlc.git
+	url = https://github.com/flueke/mesytec-mvlc.git
 [submodule "external/qgv"]
 	path = external/qgv
-	url = ../qgv.git
+	url = https://github.com/flueke/qgv.git
