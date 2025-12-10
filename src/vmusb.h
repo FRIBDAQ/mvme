@@ -104,7 +104,6 @@ class LIBMVME_EXPORT VMUSB: public VMEController
         u32 getScalerBdata();
         u32 getEventsPerBuffer();
         uint16_t getIrq(int vec);
-        uint16_t getIrqMask();
         u32 getDggSettings();
         u32 getUsbSettings();
 
@@ -122,6 +121,7 @@ class LIBMVME_EXPORT VMUSB: public VMEController
         VMEError setEventsPerBuffer(u32 val);
         VMEError setIrq(int vec, uint16_t val);
         VMEError resetIrqMask();
+        VMEError setIrqMask(int val);
         VMEError removeIrqMask(int val);
         int setDggSettings(int val);
         VMEError setUsbSettings(int val);
