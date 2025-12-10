@@ -19,7 +19,10 @@ jobs:
     - name: submodules
       run: git config --global --add safe.directory '*' &&
            git submodule update --init
-    - name: apt-get
+    - name: apt-get_1
+      run: apt-get update &&
+           apt-get install -y wget
+    - name: apt-get_2
       run: apt-get update &&
            apt-get install -y
                     bash build-essential git cmake ninja-build ca-certificates
@@ -30,7 +33,7 @@ jobs:
                     libzmq3-dev
     - name: linuxdeployqt
       run: | 
-        curl -OL https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
+        wget -c https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
         chmod a+x linuxdeployqt-continuous-x86_64.AppImage
         mv linuxdeployqt-continuous-x86_64.AppImage /usr/local/bin/linuxdeployqt
     - name: configure
