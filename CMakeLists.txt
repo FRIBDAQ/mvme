@@ -40,7 +40,7 @@ message("-- GIT_VERSION=${GIT_VERSION}")
 message("-- GIT_VERSION_SHORT=${GIT_VERSION_SHORT}")
 message("-- GIT_BRANCH=${GIT_BRANCH}")
 
-project(mvme DESCRIPTION "mesytec VME Data Acquisition" VERSION ${GIT_VERSION_SHORT})
+project(mvme DESCRIPTION "mesytec VME Data Acquisition" VERSION 1.17.1)
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose Release or Debug")
