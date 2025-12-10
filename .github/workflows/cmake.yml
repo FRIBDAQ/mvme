@@ -30,7 +30,7 @@ jobs:
                     libzmq3-dev
     - name: linuxdeployqt
       run: | 
-        wget -c https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
+        curl -OL https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
         chmod a+x linuxdeployqt-continuous-x86_64.AppImage
         mv linuxdeployqt-continuous-x86_64.AppImage /usr/local/bin/linuxdeployqt
     - name: configure
