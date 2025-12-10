@@ -22,6 +22,11 @@ jobs:
     - name: apt-get_1
       run: apt-get update &&
            apt-get install -y wget
+    - name: linuxdeployqt
+      run: | 
+        wget -c https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
+        chmod a+x linuxdeployqt-continuous-x86_64.AppImage
+        mv linuxdeployqt-continuous-x86_64.AppImage /usr/local/bin/linuxdeployqt
     - name: apt-get_2
       run: apt-get update &&
            apt-get install -y
@@ -31,11 +36,6 @@ jobs:
                     libboost-dev sphinx-common sphinx-rtd-theme-common python3-sphinx python3-sphinxcontrib.qthelp
                     texlive-latex-base texlive-latex-extra texlive-latex-recommended latexmk texlive-fonts-recommended
                     libzmq3-dev
-    - name: linuxdeployqt
-      run: | 
-        wget -c https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
-        chmod a+x linuxdeployqt-continuous-x86_64.AppImage
-        mv linuxdeployqt-continuous-x86_64.AppImage /usr/local/bin/linuxdeployqt
     - name: configure
       run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../install -DMVME_CPACK_USE_LINUXDEPLOYQT=on ..
     - name: build
