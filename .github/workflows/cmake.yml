@@ -9,7 +9,7 @@ jobs:
 
     container:
       image: debian:bullseye
-      options: --privileged --device /dev/fuse
+      options: --privileged --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined
 
     steps:
     - uses: actions/checkout@v1
