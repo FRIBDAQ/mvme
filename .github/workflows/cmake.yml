@@ -36,6 +36,8 @@ jobs:
                     libboost-dev sphinx-common sphinx-rtd-theme-common python3-sphinx python3-sphinxcontrib.qthelp
                     texlive-latex-base texlive-latex-extra texlive-latex-recommended latexmk texlive-fonts-recommended
                     libzmq3-dev fuse3
+    - name: modprobe
+      run: modprobe fuse
     - name: configure
       run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DMVME_CPACK_USE_LINUXDEPLOYQT=on ..
     - name: build
