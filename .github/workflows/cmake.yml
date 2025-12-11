@@ -37,7 +37,7 @@ jobs:
                     texlive-latex-base texlive-latex-extra texlive-latex-recommended latexmk texlive-fonts-recommended
                     libzmq3-dev fuse3 kmod
     - name: modprobe
-      run: modprobe fuse
+      run: /usr/sbin/modprobe fuse
     - name: configure
       run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DMVME_CPACK_USE_LINUXDEPLOYQT=on ..
     - name: build
