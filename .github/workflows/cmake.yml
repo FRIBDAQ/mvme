@@ -9,7 +9,7 @@ jobs:
 
     container:
       image: debian:bullseye
-      options: --privileged --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined
+      options: --privileged --cap-add SYS_ADMIN --cap-add MKNOD --device /dev/fuse --security-opt apparmor:unconfined
 
     steps:
     - uses: actions/checkout@v1
@@ -23,8 +23,6 @@ jobs:
     - name: apt-get_1
       run: apt-get update &&
            apt-get install -y wget software-properties-common
-    - name: apt-get_2
-      run: apt search extra
     - name: linuxdeployqt
       run: | 
         wget -c https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
