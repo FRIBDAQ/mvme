@@ -37,22 +37,15 @@ jobs:
                     texlive-latex-base texlive-latex-extra texlive-latex-recommended latexmk texlive-fonts-recommended
                     libzmq3-dev
     - name: configure
-      run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../install -DMVME_CPACK_USE_LINUXDEPLOYQT=on ..
+      run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DMVME_CPACK_USE_LINUXDEPLOYQT=on ..
     - name: build
       run: cmake --build build -j 4
     - name: test
       run: cd build && ctest
     - name: install
       run: cd build && make install
-    - name: packaging_1
-      run: tar -czf mvme.tgz install
     - name: packaging_2
       run: cd build && cpack -g TBZ2
-    - name: uploading_1
-      uses: actions/upload-artifact@v4
-      with:
-        name: test
-        path: ./mvme.tgz
     - name: uploading_2
       uses: actions/upload-artifact@v4
       with:
