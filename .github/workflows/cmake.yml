@@ -37,7 +37,8 @@ jobs:
                     texlive-latex-base texlive-latex-extra texlive-latex-recommended latexmk texlive-fonts-recommended
                     libzmq3-dev fuse3
     - name: modprobe
-      run: modprobe fuse
+      shell: bash
+      run: /sbin/modprobe fuse
     - name: configure
       run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DMVME_CPACK_USE_LINUXDEPLOYQT=on ..
     - name: build
@@ -47,6 +48,7 @@ jobs:
     - name: install
       run: cd build && make install
     - name: packaging_2
+      shell: bash
       run: cd build && cpack -g TBZ2
     - name: uploading_2
       uses: actions/upload-artifact@v4
