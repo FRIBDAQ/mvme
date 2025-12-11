@@ -38,7 +38,7 @@ jobs:
                     libzmq3-dev fuse3
     - name: modprobe
       shell: bash
-      run: /sbin/modprobe fuse
+      run: /usr/sbin/modprobe fuse
     - name: configure
       run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DMVME_CPACK_USE_LINUXDEPLOYQT=on ..
     - name: build
