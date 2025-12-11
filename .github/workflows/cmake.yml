@@ -24,7 +24,7 @@ jobs:
       run: apt-get update &&
            apt-get install -y wget software-properties-common
     - name: apt-get_2
-      run: apt search linux-
+      run: apt search extra
     - name: linuxdeployqt
       run: | 
         wget -c https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
