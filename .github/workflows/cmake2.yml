@@ -24,7 +24,7 @@ jobs:
       run: apt-get update &&
            apt-get install -y wget software-properties-common
     - name: Install LinuxDeployQt
-      uses: miurahr/install-linuxdeployqt-action@v0
+      uses: miurahr/install-linuxdeployqt-action@v1.0.1
     - name: apt-get_2
       run: apt-get update &&
            apt-get install -y
