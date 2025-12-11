@@ -44,10 +44,22 @@ jobs:
       run: cd build && ctest
     - name: install
       run: cd build && make install
-    - name: packaging
+    - name: packaging_1
       run: tar -czf mvme.tgz install
-    - name: uploading
+    - name: packaging_2
+      run: cd build && cpack -g TBZ2
+    - name: uploading_1
       uses: actions/upload-artifact@v4
       with:
         name: test
         path: ./mvme.tgz
+    - name: uploading_2
+      uses: actions/upload-artifact@v4
+      with:
+        name: test2
+        path: ./*.tbz2
+    - name: uploading_3
+      uses: actions/upload-artifact@v4
+      with:
+        name: test3
+        path: ./build/*.tbz2
