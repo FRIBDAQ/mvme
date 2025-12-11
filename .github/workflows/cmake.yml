@@ -27,6 +27,10 @@ jobs:
         wget -c https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
         chmod a+x linuxdeployqt-continuous-x86_64.AppImage
         mv linuxdeployqt-continuous-x86_64.AppImage /usr/local/bin/linuxdeployqt
+        add-apt-repository main
+        add-apt-repository universe
+        add-apt-repository restricted
+        add-apt-repository multiverse
     - name: apt-get_2
       run: apt-get update &&
            apt-get install -y
